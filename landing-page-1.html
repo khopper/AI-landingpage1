@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Momentum AI — Get Unstuck on AI</title>
+  <meta name="description" content="Momentum AI helps mid‑market organizations make meaningful AI progress fast with small, proof‑producing pilots co‑created with your team." />
+  <style>
+    :root{
+      --bg: #ffffff;
+      --panel: #f8fafc;
+      --muted: #5b6573;
+      --text: #0b1220;
+      --accent: #1674e0;
+      --accent-2: #14a37f;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --focus: #0ea5e9;
+      --error: #b91c1c;
+    }
+    html{scroll-behavior:smooth}
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+    body{margin:0; background:var(--bg); color:var(--text); font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--accent)} a:hover{opacity:.9}
+    .container{width:100%; max-width:1120px; margin-inline:auto; padding-inline:24px}
+    .grid{display:grid; gap:24px}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1rem; border-radius:12px; border:1px solid var(--border); background:#f3f6fb; color:#0b1220; text-decoration:none; font-weight:600}
+    .btn.primary{background:#e7f1ff; border-color:#cfe4ff}
+    .btn:focus-visible{outline:3px solid var(--focus); outline-offset:3px}
+    .pill{display:inline-block; padding:.3rem .6rem; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:.8rem}
+
+    /* HERO */
+    .hero{position:relative; overflow:hidden; border-bottom:1px solid var(--border); background:radial-gradient(1200px 600px at 70% -10%,rgba(22,116,224,.06),transparent), radial-gradient(1000px 500px at -10% -20%,rgba(20,163,127,.05),transparent)}
+    .hero .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; padding:72px 0}
+    @media (max-width: 900px){.hero .wrap{grid-template-columns:1fr; padding:56px 0}}
+
+    h1{font-size: clamp(2rem, 4.5vw, 3rem); line-height:1.1; margin:0 0 16px}
+    h2{font-size: clamp(1.6rem, 3vw, 2.2rem); line-height:1.2; margin:0 0 12px}
+    h3{font-size:1.15rem; margin:.2rem 0 .8rem}
+    p{margin:0 0 1rem}
+    .muted{color:var(--muted)}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:20px; box-shadow:0 1px 0 rgba(0,0,0,.02)}
+    .list{display:grid; gap:.6rem}
+    .list li{list-style:none; display:flex; gap:.6rem; align-items:flex-start}
+    .list svg{flex:0 0 20px}
+
+    /* Logo strip */
+    .logos{padding:24px 0 12px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:#f6f8fb}
+    .logo-grid{display:grid; grid-template-columns:repeat(6,1fr); gap:24px; align-items:center}
+    @media (max-width:900px){.logo-grid{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width:520px){.logo-grid{grid-template-columns:repeat(2,1fr)}}
+    .logo-tile{background:#ffffff; border:1px solid var(--border); border-radius:14px; height:72px; display:flex; align-items:center; justify-content:center}
+
+    /* Sections */
+    section{padding:64px 0}
+    .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:16px}
+    .section-sub{color:var(--muted); font-size:.95rem}
+
+    /* Problem Mirror */
+    .mirror{display:grid; grid-template-columns:1fr 1fr; gap:24px}
+    @media (max-width: 900px){.mirror{grid-template-columns:1fr}}
+    .checklist{display:grid; gap:12px}
+    .check{display:grid; grid-template-columns:20px 1fr; column-gap:10px; align-items:start}
+    .check input{margin:3px 0 0 0; width:18px; height:18px}
+    .check span{display:block; margin:0; line-height:1.5}
+
+    /* Compare */
+    .compare{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width: 900px){.compare{grid-template-columns:1fr}}
+    .compare .col{background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px}
+    .compare h3{margin:0 0 8px}
+    .compare ul{padding-left:18px; margin:0}
+    .compare li{margin:0 0 8px}
+
+    /* Approach Diagram */
+    .diagram{display:flex; gap:16px; align-items:center; justify-content:center; flex-wrap:wrap; padding:16px; border:1px dashed var(--border); border-radius:14px; background:var(--panel)}
+    .phase{display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--border); border-radius:12px; background:#fff}
+
+    /* Timeline */
+    .timeline{display:grid; gap:16px}
+    .step{display:grid; grid-template-columns:92px 1fr; gap:16px; align-items:start}
+    @media (max-width:700px){.step{grid-template-columns:1fr}}
+    .badge{background:#eef4ff; border:1px solid var(--border); border-radius:999px; padding:.35rem .7rem; color:#214; font-size:.85rem}
+
+    /* Sector tiles */
+    .tiles{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+    @media (max-width: 1000px){.tiles{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width: 580px){.tiles{grid-template-columns:1fr}}
+    .tile{padding:18px}
+
+    /* Carousel */
+    .carousel{position:relative}
+    .carousel-viewport{overflow:hidden}
+    .slides{display:flex; transition:transform .6s ease; will-change:transform}
+    .slide{min-width:33.3333%; box-sizing:border-box; padding:0 12px}
+    @media (max-width:900px){.slide{min-width:50%}}
+    @media (max-width:600px){.slide{min-width:100%}}
+    .slide blockquote{font-size:1.05rem; margin:0}
+    .slide footer{margin-top:.75rem; color:var(--muted)}
+    .carousel-controls{position:absolute; inset:0; display:flex; align-items:center; justify-content:space-between; pointer-events:none}
+    .carousel button{pointer-events:auto}
+
+    /* Form */
+    form{display:grid; gap:12px}
+    .row{display:grid; gap:12px; grid-template-columns:1fr 1fr}
+    @media (max-width:700px){.row{grid-template-columns:1fr}}
+    label{font-size:.95rem}
+    input, select, textarea{width:100%; padding:.8rem .9rem; border-radius:12px; border:1px solid var(--border); background:#fff; color:#0b1220}
+    textarea{min-height:120px; resize:vertical}
+    .help{font-size:.85rem; color:var(--muted)}
+    .error{color:var(--error); font-size:.9rem}
+
+    /* Footer */
+    footer{border-top:1px solid var(--border); color:#475569; padding:36px 0}
+
+    /* Sticky CTA (mobile) */
+    .sticky-cta{display:none}
+    @media (max-width:700px){.sticky-cta{display:block; position:fixed; bottom:16px; left:50%; transform:translateX(-50%); z-index:20}}
+  </style>
+</head>
+<body>
+  <main>
+    <!-- HERO (no top strip) -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container wrap">
+        <div>
+          <h1 id="hero-title">Get Unstuck on AI — Fast, Proof‑Based, and Built With Your Team</h1>
+          <p class="muted" style="max-width:52ch">For mid‑market organizations with legacy systems and real pressure on margins. We help you make visible progress in weeks, not months — earning confidence, buy‑in, and ROI without betting the company.</p>
+          <ul class="list" style="margin:18px 0 26px">
+            <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12l4 4 12-12" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round"/></svg><span>Small, <strong>evidence‑producing pilots</strong> that lower risk and build momentum.</span></li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="8" cy="12" r="3" stroke="var(--accent)" stroke-width="2" fill="none"/><circle cx="16" cy="12" r="3" stroke="var(--accent)" stroke-width="2" fill="none"/><path d="M5 19c2-3 12-3 14 0" stroke="var(--accent)" stroke-width="2" fill="none"/></svg><span><strong>Co‑created with your staff</strong> to unlock expertise and buy‑in.</span></li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 16l6-6 4 4 6-6" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/><path d="M4 20h16" stroke="var(--accent)" stroke-width="2"/></svg><span>A <strong>clear path from first win to scale</strong> — with the proof to earn continued investment.</span></li>
+          </ul>
+          <div class="grid" style="grid-template-columns:auto auto; gap:12px">
+            <a href="#contact" class="btn primary" aria-label="Talk to us — go to contact form">Talk to Us</a>
+            <a href="#sprint" class="btn" aria-label="Jump to how it works">How it works in 4 weeks ↓</a>
+          </div>
+        </div>
+        <aside>
+          <img src="momentum-process-diagram.png" alt="Momentum AI process diagram showing Foothold → Pilot → Proof → Scale" style="width:100%; height:auto; border:1px solid var(--border); border-radius:16px; display:block; background:#fff"/>
+        </aside>
+      </div>
+    </section>
+
+    <!-- LOGO FARM -->
+    <section class="logos" aria-labelledby="logos-title">
+      <div class="container">
+        <div class="section-head"><p id="logos-title" class="muted">Trusted by mid‑market organizations that aren’t digitally native — but need meaningful AI progress now.</p></div>
+        <div class="logo-grid" role="list" aria-label="Representative client industries">
+          <div class="logo-tile" role="listitem" aria-label="Professional Services placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><path d="M18 30 L28 10 L38 30 Z" fill="#1674e0"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">Harbor Legal</text></svg></div>
+          <div class="logo-tile" role="listitem" aria-label="Non‑profit placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><circle cx="24" cy="20" r="10" fill="#14a37f"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">GoodWorks Org</text></svg></div>
+          <div class="logo-tile" role="listitem" aria-label="Healthcare placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><path d="M20 12h8v8h8v8h-8v8h-8v-8h-8v-8h8z" fill="#60a5fa"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">River Health</text></svg></div>
+          <div class="logo-tile" role="listitem" aria-label="Financial Services placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><path d="M14 28 L26 12 L38 28" fill="none" stroke="#1674e0" stroke-width="3"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">Crescent Finance</text></svg></div>
+          <div class="logo-tile" role="listitem" aria-label="Professional Services placeholder logo 2"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><rect x="16" y="10" width="20" height="20" rx="4" fill="#1674e0"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">Bridge & Co</text></svg></div>
+          <div class="logo-tile" role="listitem" aria-label="Financial Services placeholder logo 2"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><circle cx="20" cy="20" r="10" fill="none" stroke="#14a37f" stroke-width="3"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">NorthStar Bank</text></svg></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM MIRROR + COMPARE -->
+    <section id="mirror" class="container" aria-labelledby="mirror-title">
+      <div class="section-head"><h2 id="mirror-title">Do you recognize this?</h2><p class="section-sub">If two or more feel familiar, you’re our sweet spot.</p></div>
+      <div class="mirror">
+        <div class="card"><div class="checklist" role="group" aria-label="Common blockers">
+          <label class="check"><input type="checkbox" aria-label="Margin pressure rising"/> <span>Margin pressure is rising and leadership wants AI outcomes, not another deck.</span></label>
+          <label class="check"><input type="checkbox" aria-label="Don’t know where to apply AI first"/> <span>You believe AI can help, but <strong>don’t know where to apply it first</strong> for real ROI.</span></label>
+          <label class="check"><input type="checkbox" aria-label="Big proposals feel risky"/> <span>Big vendor proposals feel <strong>expensive and risky</strong> for a first step.</span></label>
+          <label class="check"><input type="checkbox" aria-label="Uneven internal buy-in"/> <span>Internal buy‑in is uneven; some are excited, others are <strong>skeptical or threatened</strong>.</span></label>
+          <label class="check"><input type="checkbox" aria-label="Legacy systems and compliance"/> <span>Legacy systems and compliance make “just try it” sound unrealistic.</span></label>
+          <label class="check"><input type="checkbox" aria-label="Need visible wins fast"/> <span>You need <strong>visible wins fast</strong> to unlock budget and momentum.</span></label>
+        </div></div>
+        <div class="card">
+          <h3 style="margin-top:0">Why traditional paths stall</h3>
+          <div class="compare">
+            <div class="col">
+              <h3 class="muted">Traditional SI/Consulting</h3>
+              <ul>
+                <li>Long assessments, big bets, tool‑centric recommendations.</li>
+                <li>Minimal engagement with your team → low buy‑in, weak change adoption.</li>
+                <li>Optimized for large, ready‑to‑spend programs.</li>
+                <li>Risk is front‑loaded; proof comes late (if at all).</li>
+              </ul>
+            </div>
+            <div class="col">
+              <h3>The Momentum AI model</h3>
+              <ul>
+                <li><strong>Project‑based discovery</strong>: small pilots that both learn and deliver.</li>
+                <li>Built <strong>with</strong> your staff to develop capability and trust.</li>
+                <li><strong>Affordable starts</strong> that de‑risk and reveal where to scale.</li>
+                <li><strong>Proof first</strong>: tangible outcomes in weeks, not months.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR APPROACH -->
+    <section class="container" aria-labelledby="approach-title">
+      <div class="section-head"><h2 id="approach-title">Our approach: quick wins that build capability</h2><p class="section-sub">Think of it as ROI‑earning discovery — you learn by doing, with evidence you can take to your CEO and board.</p></div>
+      <div class="diagram" aria-label="Foothold to Scale diagram"><div class="phase">Foothold</div><span aria-hidden="true">→</span><div class="phase">Pilot</div><span aria-hidden="true">→</span><div class="phase">Proof</div><span aria-hidden="true">→</span><div class="phase">Scale</div></div>
+    </section>
+
+    <!-- HOW IT WORKS / SPRINT -->
+    <section id="sprint" class="container" aria-labelledby="sprint-title">
+      <div class="section-head"><h2 id="sprint-title">How it works: 4‑week starter sprint</h2><p class="section-sub">What you’ll have in 4 weeks: hard evidence, a confident next step, and a team that wants to keep going.</p></div>
+      <div class="timeline card">
+        <div class="step"><div><span class="badge">Week 0</span></div><div><h3>Intake & Alignment (2–3 hours)</h3><p>Identify a high‑leverage foothold; align on success metrics and guardrails. <em>Artifacts:</em> Success Brief, data/IT guardrails.</p></div></div>
+        <div class="step"><div><span class="badge">Week 1</span></div><div><h3>Prototype with Your Team</h3><p>Build a scrappy, safe pilot in a controlled setting using your data context. <em>Artifacts:</em> working demo, risk register.</p></div></div>
+        <div class="step"><div><span class="badge">Week 2</span></div><div><h3>Pilot in the Real Workflow</h3><p>Limited exposure with real users; capture outcomes and feedback. <em>Artifacts:</em> pilot metrics, change notes.</p></div></div>
+        <div class="step"><div><span class="badge">Week 3</span></div><div><h3>Measure & Prove</h3><p>Quantify impact (time saved, error reduction, throughput); collect testimonials; document learnings.</p></div></div>
+        <div class="step"><div><span class="badge">Week 4</span></div><div><h3>Recommend Next Step</h3><p>Go/No‑Go options: expand pilot, productionize, or pivot to a better foothold. <em>Artifacts:</em> Proof Pack (metrics, demo, exec one‑pager), Scale Options.</p></div></div>
+      </div>
+    </section>
+
+    <!-- SECTOR TILES -->
+    <section class="container" aria-labelledby="sectors-title">
+      <div class="section-head"><h2 id="sectors-title">Where we start (sector‑specific footholds)</h2><p class="section-sub">We remain tool‑agnostic and fit within your security and compliance constraints.</p></div>
+      <div class="tiles">
+        <div class="card tile"><h3>Professional Services</h3><ul class="list"><li>Draft‑assist for proposals or statements of work in regulated contexts.</li><li>Research summarization across prior matters/cases/projects.</li><li>Intake triage to route work faster with fewer touches.</li></ul></div>
+        <div class="card tile"><h3>Mission‑Driven Non‑profits</h3><ul class="list"><li>Grant matching/summarization to increase hit rate.</li><li>Donor communications drafting with personalization controls.</li><li>Program reporting: auto‑compile narratives from field notes.</li></ul></div>
+        <div class="card tile"><h3>Healthcare Providers</h3><ul class="list"><li>Clinical documentation summarization to reduce admin burden (within compliance).</li><li>Patient messaging drafts with human review checkpoints.</li><li>Eligibility/prior‑auth packet preparation.</li></ul></div>
+        <div class="card tile"><h3>Financial Services</h3><ul class="list"><li>KYC/AML document summarization and risk flag triage.</li><li>Portfolio commentary drafts with compliance guardrails.</li><li>Claims intake classification and next‑action suggestions.</li></ul></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS CAROUSEL (3-up) -->
+    <section class="container" aria-labelledby="testimonials-title">
+      <div class="section-head"><h2 id="testimonials-title">Proof from leaders like you</h2><p class="section-sub">Short, candid reflections from mid‑market teams under real constraints.</p></div>
+      <div class="carousel card" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
+        <div class="carousel-viewport" aria-live="polite">
+          <div class="slides" id="slides">
+            <div class="slide"><blockquote>“It’s not about flipping a big switch and changing everything overnight. It’s about finding those small footholds where I can actually get something done, and that means I can navigate those legacy systems and regulatory hurdles in a way that’s actually doable.”</blockquote><footer>— VP Innovation, Healthcare</footer></div>
+            <div class="slide"><blockquote>“We were worried AI would replace people, but instead it gave our team better tools and actually increased buy‑in. For the first time, our employees felt like part of the future instead of threatened by it.”</blockquote><footer>— COO, Professional Services</footer></div>
+            <div class="slide"><blockquote>“Everyone else told us we needed to spend millions and replace our systems. This approach showed us we could get measurable results quickly without betting the entire organization on one risky move.”</blockquote><footer>— CEO, Financial Services</footer></div>
+            <div class="slide"><blockquote>“We’ve seen countless strategies that looked good on paper but failed to inspire action. These small wins changed the conversation inside our organization and sparked curiosity instead of resistance.”</blockquote><footer>— Head of IT, Non‑profit</footer></div>
+            <div class="slide"><blockquote>“What surprised us most was how much we learned by running small pilot projects. We uncovered insights about our data, our workflows, and our culture that no amount of planning sessions had revealed.”</blockquote><footer>— VP Innovation, Professional Services</footer></div>
+            <div class="slide"><blockquote>“We didn’t need another assessment or strategy deck. What we got was hard evidence — real results we could take to leadership. That made all the difference in winning support for the next phase.”</blockquote><footer>— CIO, Healthcare</footer></div>
+            <div class="slide"><blockquote>“The best part is that nothing felt locked in. We could stop what wasn’t working, double down on what was, and adjust as the technology and our needs changed.”</blockquote><footer>— CEO, Non‑profit</footer></div>
+          </div>
+        </div>
+        <div class="carousel-controls" aria-hidden="true"><button class="btn" id="prev" aria-label="Previous testimonial" style="margin-left:8px">‹</button><button class="btn" id="next" aria-label="Next testimonial" style="margin-right:8px">›</button></div>
+      </div>
+    </section>
+
+    <!-- CTA / CONTACT (restored) -->
+    <section id="contact" class="container" aria-labelledby="contact-title">
+      <div class="grid" style="grid-template-columns:1.2fr .8fr; gap:24px">
+        <div>
+          <h2 id="contact-title">Ready to see progress in weeks, not months?</h2>
+          <p class="muted" style="max-width:55ch">Tell us a bit about your situation. We’ll respond with a quick perspective and suggest a foothold to explore together.</p>
+          <div class="card" style="margin-top:16px">
+            <form id="inquiry-form" novalidate>
+              <div class="row"><div><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Jane Chen" /></div><div><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="jane@example.com" /></div></div>
+              <div class="row"><div><label for="role">Role</label><select id="role" name="role" required><option value="">Select</option><option>CEO</option><option>Head of IT</option><option>VP of Innovation</option><option>Other</option></select></div><div><label for="org">Organization</label><input id="org" name="org" type="text" required placeholder="River Health Network" /></div></div>
+              <div class="row"><div><label for="industry">Industry</label><select id="industry" name="industry" required><option value="">Select</option><option>Professional Services</option><option>Non‑profit</option><option>Healthcare</option><option>Financial Services</option></select></div><div><label for="driver">Urgent driver</label><select id="driver" name="driver" required><option value="">Select</option><option>Shrinking margins</option><option>Board pressure</option><option>Competitive move</option><option>Other</option></select></div></div>
+              <div><label for="win">What would a “good first win” look like?</label><textarea id="win" name="win" placeholder="e.g., reduce intake time by 20%, or get a draft‑assist into one team’s workflow"></textarea><p id="form-help" class="help">We’ll only use your info to respond to this inquiry.</p></div>
+              <div id="form-error" class="error" aria-live="polite" style="display:none"></div>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap"><button class="btn primary" type="submit">Talk to Us</button><span class="muted">or email <a href="mailto:hello@momentum.ai">hello@momentum.ai</a></span></div>
+            </form>
+          </div>
+        </div>
+        <aside>
+          <div class="card"><h3 style="margin-top:0">What you can expect</h3><ul class="list"><li>Human conversation in plain English — no hype.</li><li>A concrete foothold idea for your context.</li><li>Clear next steps for a low‑risk starter sprint.</li></ul></div>
+          <div class="card"><h3 style="margin-top:0">Company</h3><p><strong>Momentum AI</strong><br/>Vendor‑neutral · Remote‑first</p></div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap">
+      <p>© <span id="year"></span> Momentum AI. All rights reserved.</p>
+      <nav aria-label="Footer"><a href="#contact">Contact</a> · <a href="#sprint">How it works</a> · <a href="#sectors-title">Sectors</a></nav>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA (mobile) -->
+  <div class="sticky-cta"><a class="btn primary" href="#contact">Talk to Us</a></div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth internal links (respect reduced motion)
+    (function(){
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; if(reduce) return;
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', e=>{ const id=a.getAttribute('href').slice(1), el=document.getElementById(id); if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); } });
+      });
+    })();
+
+    // Testimonials carousel (3-up, slides one card at a time)
+    (function(){
+      const viewport = document.querySelector('.carousel-viewport');
+      const slides = document.getElementById('slides');
+      if(!slides) return;
+      const visible = 3; const total = slides.children.length; const maxIndex = Math.max(0, total - visible);
+      let index = 0; let timer = null; const DURATION = 6000;
+      const set = (i)=>{ if(i>maxIndex) index=0; else if(i<0) index=maxIndex; else index=i; slides.style.transform = `translateX(${-index*(100/visible)}%)`; };
+      const play = ()=>{ timer = setInterval(()=> set(index+1), DURATION); };
+      const stop = ()=>{ if(timer){ clearInterval(timer); timer=null; } };
+      document.getElementById('prev').addEventListener('click', ()=>{ stop(); set(index-1); play(); });
+      document.getElementById('next').addEventListener('click', ()=>{ stop(); set(index+1); play(); });
+      viewport.addEventListener('mouseenter', stop); viewport.addEventListener('mouseleave', play);
+      play();
+    })();
+
+    // Contact form (front-end validation only)
+    (function(){
+      const form = document.getElementById('inquiry-form'); const err = document.getElementById('form-error'); if(!form) return;
+      form.addEventListener('submit', function(e){ e.preventDefault(); err.style.display='none'; err.textContent=''; if(!form.checkValidity()){ err.textContent='Please complete all required fields.'; err.style.display='block'; return; } form.reset(); const msg=document.createElement('div'); msg.className='pill'; msg.style.marginTop='8px'; msg.textContent='Thanks! We\'ll be in touch within one business day.'; form.appendChild(msg); });
+    })();
+  </script>
+</body>
+</html>
