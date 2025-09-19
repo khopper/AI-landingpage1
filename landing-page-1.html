@@ -53,7 +53,8 @@
 
     /* Sections */
     section{padding:64px 0}
-    .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:16px}
+    /*.section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:16px} */
+    .section-head{ display: flex; flex-direction: column; gap: .25rem; }
     .section-sub{color:var(--muted); font-size:.95rem}
 
     /* Problem Mirror */
@@ -163,9 +164,9 @@
       <div class="section-head"><h2 id="mirror-title">Do you recognize this?</h2><p class="section-sub">If two or more feel familiar, you’re our sweet spot.</p></div>
       <div class="mirror">
         <div class="card"><div class="checklist" role="group" aria-label="Common blockers">
-          <label class="check"><input type="checkbox" aria-label="Margin pressure rising"/> <span>Margin pressure is rising and leadership wants AI outcomes, not another deck.</span></label>
+          <label class="check"><input type="checkbox" aria-label="Margin pressure rising"/> <span>Pressure to integrate real AI solutions is rising and you need outcomes, not another deck.</span></label>
           <label class="check"><input type="checkbox" aria-label="Don’t know where to apply AI first"/> <span>You believe AI can help, but <strong>don’t know where to apply it first</strong> for real ROI.</span></label>
-          <label class="check"><input type="checkbox" aria-label="Big proposals feel risky"/> <span>Big vendor proposals feel <strong>expensive and risky</strong> for a first step.</span></label>
+          <label class="check"><input type="checkbox" aria-label="Big proposals feel risky"/> <span>Vendor proposals feel <strong>expensive and risky</strong> for a first step.</span></label>
           <label class="check"><input type="checkbox" aria-label="Uneven internal buy-in"/> <span>Internal buy‑in is uneven; some are excited, others are <strong>skeptical or threatened</strong>.</span></label>
           <label class="check"><input type="checkbox" aria-label="Legacy systems and compliance"/> <span>Legacy systems and compliance make “just try it” sound unrealistic.</span></label>
           <label class="check"><input type="checkbox" aria-label="Need visible wins fast"/> <span>You need <strong>visible wins fast</strong> to unlock budget and momentum.</span></label>
@@ -174,7 +175,7 @@
           <h3 style="margin-top:0">Why traditional paths stall</h3>
           <div class="compare">
             <div class="col">
-              <h3 class="muted">Traditional SI/Consulting</h3>
+              <h3 class="muted">Systems Integrators & Consultants</h3>
               <ul>
                 <li>Long assessments, big bets, tool‑centric recommendations.</li>
                 <li>Minimal engagement with your team → low buy‑in, weak change adoption.</li>
