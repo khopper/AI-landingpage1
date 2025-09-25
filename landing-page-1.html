@@ -24,7 +24,7 @@
     a{color:var(--accent)} a:hover{opacity:.9}
     .container{width:100%; max-width:1120px; margin-inline:auto; padding-inline:24px}
     .grid{display:grid; gap:24px}
-    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.8rem 1rem; border-radius:12px; border:1px solid var(--border); background:#f3f6fb; color:#0b1220; text-decoration:none; font-weight:600}
+    .btn{display:inline-flex; align-items:center; justify-content:center; text-align: center; gap:.5rem; padding:.8rem 1rem; border-radius:12px; border:1px solid var(--border); background:#f3f6fb; color:#0b1220; text-decoration:none; font-weight:600}
     .btn.primary{background:#e7f1ff; border-color:#cfe4ff}
     .btn:focus-visible{outline:3px solid var(--focus); outline-offset:3px}
     .pill{display:inline-block; padding:.3rem .6rem; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:.8rem}
@@ -126,16 +126,16 @@
       <div class="container wrap">
         <div>
           <img src="image-momentum.png" alt="adsf" style="width:50%; height:80; display:block; padding-bottom:30px"/>
-          <h1 id="hero-title">Get Unstuck on AI — Fast, Results-oriented, and in Collaboration With Your Team</h1>
-          <p class="muted" style="max-width:52ch">For leaders who recognize the importance of AI but are struggling to build momentum within your organization. We help you uncover the right AI solutions that matter to your unique business and make visible progress in weeks, not months — earning confidence, buy‑in, and ROI without betting the company.</p>
+          <h1 id="hero-title">Unlock AI’s Potential: Measurable Results, Delivered Alongside Your Team.</h1>
+          <p class="muted" style="max-width:52ch">For leaders who see the importance of AI but need help turning initiative into results. We identify the right AI solutions for your business and deliver visible progress in weeks — building confidence with your teams and gaining organizational buy-in with measurable ROI.</p>
           <ul class="list" style="margin:18px 0 26px">
-            <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12l4 4 12-12" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round"/></svg><span>Small, <strong>evidence‑producing projects</strong> that lower risk and get your organization moving.</span></li>
-            <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="8" cy="12" r="3" stroke="var(--accent)" stroke-width="2" fill="none"/><circle cx="16" cy="12" r="3" stroke="var(--accent)" stroke-width="2" fill="none"/><path d="M5 19c2-3 12-3 14 0" stroke="var(--accent)" stroke-width="2" fill="none"/></svg><span><strong>Co‑created with your staff</strong> to unlock expertise and buy‑in.</span></li>
-            <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 16l6-6 4 4 6-6" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/><path d="M4 20h16" stroke="var(--accent)" stroke-width="2"/></svg><span>A <strong>clear path from first win to scale</strong> — with the proof to earn continued investment.</span></li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12l4 4 12-12" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round"/></svg><span>Quick, <strong>low-risk projects</strong> that show real results and get your team moving.</span></li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="8" cy="12" r="3" stroke="var(--accent)" stroke-width="2" fill="none"/><circle cx="16" cy="12" r="3" stroke="var(--accent)" stroke-width="2" fill="none"/><path d="M5 19c2-3 12-3 14 0" stroke="var(--accent)" stroke-width="2" fill="none"/></svg><span>Enhancing, not replacing your team - we work alongside you to enable and <strong>gain buy-in</strong>.</span></li>
+            <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 16l6-6 4 4 6-6" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/><path d="M4 20h16" stroke="var(--accent)" stroke-width="2"/></svg><span>A clear path from pilot to scale - <strong>creating the vision</strong> to keep moving forward.</span></li>
           </ul>
           <div class="grid" style="grid-template-columns:auto auto; gap:12px">
             <a href="#contact" class="btn primary" aria-label="Talk to us — go to contact form">Talk to Us</a>
-            <a href="#sprint" class="btn" aria-label="Jump to how it works">How it works in 4 weeks ↓</a>
+            <!-- <a href="#sprint" class="btn" aria-label="Jump to how it works">How it works in 4 weeks ↓</a> -->
           </div>
         </div>
         <aside>
@@ -147,49 +147,69 @@
     <!-- LOGO FARM -->
     <section class="logos" aria-labelledby="logos-title">
       <div class="container">
-        <div class="section-head"><p id="logos-title" class="muted">Trusted by mid‑market organizations that aren’t digitally native — but need meaningful AI progress now.</p></div>
-        <div class="logo-grid" role="list" aria-label="Representative client industries">
+        <div class="section-head"><p id="logos-title" class="muted">From Fortune 500s to leading non-profits, Momentum AI’s approach helps organizations struggling to gain traction on their AI initiatives and make meaningful, measurable, progress.</p>
+
+          <img src="logo-farm.png" style="display:block;margin:0 auto;width:80%;height:auto;">
+          </div>
+          <!--
           <div class="logo-tile" role="listitem" aria-label="Professional Services placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><path d="M18 30 L28 10 L38 30 Z" fill="#1674e0"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">Harbor Legal</text></svg></div>
           <div class="logo-tile" role="listitem" aria-label="Non‑profit placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><circle cx="24" cy="20" r="10" fill="#14a37f"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">GoodWorks Org</text></svg></div>
           <div class="logo-tile" role="listitem" aria-label="Healthcare placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><path d="M20 12h8v8h8v8h-8v8h-8v-8h-8v-8h8z" fill="#60a5fa"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">River Health</text></svg></div>
           <div class="logo-tile" role="listitem" aria-label="Financial Services placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><path d="M14 28 L26 12 L38 28" fill="none" stroke="#1674e0" stroke-width="3"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">Crescent Finance</text></svg></div>
           <div class="logo-tile" role="listitem" aria-label="Professional Services placeholder logo 2"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><rect x="16" y="10" width="20" height="20" rx="4" fill="#1674e0"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">Bridge & Co</text></svg></div>
           <div class="logo-tile" role="listitem" aria-label="Financial Services placeholder logo 2"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><circle cx="20" cy="20" r="10" fill="none" stroke="#14a37f" stroke-width="3"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">NorthStar Bank</text></svg></div>
-        </div>
+          -->
+ 
       </div>
     </section>
 
     <!-- PROBLEM MIRROR + COMPARE -->
     <section id="mirror" class="container" aria-labelledby="mirror-title">
-      <div class="section-head"><h2 id="mirror-title">Do you recognize this?</h2><p class="section-sub">If two or more feel familiar, you’re our sweet spot.</p></div>
       <div class="mirror">
-        <div class="card"><div class="checklist" role="group" aria-label="Common blockers">
-          <label class="check"><input type="checkbox" aria-label="Margin pressure rising"/> <span>Pressure to integrate real AI solutions is rising and you need outcomes, not another deck.</span></label>
-          <label class="check"><input type="checkbox" aria-label="Don’t know where to apply AI first"/> <span>You believe AI can help, but <strong>don’t know where to apply it first</strong> for real ROI.</span></label>
-          <label class="check"><input type="checkbox" aria-label="Big proposals feel risky"/> <span>Vendor proposals feel <strong>expensive and risky</strong> for a first step.</span></label>
-          <label class="check"><input type="checkbox" aria-label="Uneven internal buy-in"/> <span>Internal buy‑in is uneven; some are excited, others are <strong>skeptical or threatened</strong>.</span></label>
-          <label class="check"><input type="checkbox" aria-label="Legacy systems and compliance"/> <span>Legacy systems and compliance make “just try it” sound unrealistic.</span></label>
-          <label class="check"><input type="checkbox" aria-label="Need visible wins fast"/> <span>You need <strong>visible wins fast</strong> to unlock budget and momentum.</span></label>
+        <div class="card">
+          <h3 style="margin-top:0">Does this sound like your organization?</h3>
+          <div class="checklist" role="group" aria-label="Common blockers">
+          <label class="check">
+            <input type="checkbox" aria-label="Pressure to adopt AI rises within your company - what matters now are outcomes I can show, not slides I can share."/>
+            <span>Pressure to adopt AI is rising - what matters now are <strong>outcomes I can show</strong>, not slides I can share.</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" aria-label="We have been experimenting with AI, but the efforts have stalled before we have seen any tangible results."/>
+            <span>We have been experimenting with AI, but the efforts have not yielded <strong>tangible results</strong>.</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" aria-label="I see AI’s potential, but the first step toward real outcomes and ROI isn’t clear."/>
+            <span>I see AI’s potential, but the <strong>initial steps</strong> toward real outcomes and ROI isn’t clear.</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" aria-label="I’ve evaluated software solutions, but they feel expensive and risky as a first step."/>
+            <span>I’ve evaluated software solutions, but they feel <strong>expensive and risky</strong> as a first step.</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" aria-label="I’m concerned our legacy systems will hold us back."/>
+            <span>I’m concerned our <strong>legacy systems</strong> will hold us back.</span>
+          </label>
+          <label class="check">
+            <input type="checkbox" aria-label="Our leaders need quick, visible wins to unlock budget and build momentum."/>
+            <span>We need <strong>quick, visible wins</strong> to unlock budget and build momentum.</span>
+          </label>
         </div></div>
         <div class="card">
-          <h3 style="margin-top:0">Why traditional paths stall</h3>
           <div class="compare">
             <div class="col">
-              <h3 class="muted">Systems Integrators & Consultants</h3>
+              <h3 class="muted">Why traditional paths stall</h3>
               <ul>
-                <li>Long assessments, big bets, tool‑centric recommendations.</li>
-                <li>Minimal engagement with your team → low buy‑in, weak change adoption.</li>
-                <li>Optimized for large, ready‑to‑spend programs.</li>
-                <li>Risk is front‑loaded; proof comes late (if at all).</li>
+              <li>Long assessments, big bets, tool-centric recommendations.</li>
+              <li>Minimal engagement with your team driving low buy-in and poor adoption.</li>
+              <li>Optimized for known solutions with no ability to learn and adjust along the way.</li>
               </ul>
             </div>
             <div class="col">
-              <h3>The Momentum AI model</h3>
+              <h3 class="muted">How Momentum AI is different</h3>
               <ul>
-                <li><strong>Project‑based discovery</strong>: small pilots that both learn and deliver.</li>
-                <li>Built <strong>with</strong> your staff to develop capability and trust.</li>
-                <li><strong>Affordable starts</strong> that de‑risk and reveal where to scale.</li>
-                <li><strong>Proof first</strong>: tangible outcomes in weeks, not months.</li>
+              <li>Targeted pilot delivered over a short duration - proving value quickly.</li>
+              <li>Built in collaboration with your team to develop capability and earn trust.</li>
+              <li>Iterative approach with defined feedback loops and optimization process.</li>
               </ul>
             </div>
           </div>
@@ -199,11 +219,17 @@
 
     <!-- OUR APPROACH -->
     <section class="container" aria-labelledby="approach-title">
-      <div class="section-head"><h2 id="approach-title">Our approach: quick wins that build capability</h2><p class="section-sub">Think of it as ROI‑earning discovery — you learn by doing, with evidence you can take to your CEO and board.</p></div>
-      <div class="diagram" aria-label="Foothold to Scale diagram"><div class="phase">Foothold</div><span aria-hidden="true">→</span><div class="phase">Pilot</div><span aria-hidden="true">→</span><div class="phase">Proof</div><span aria-hidden="true">→</span><div class="phase">Scale</div></div>
+      <div class="section-head"><h2 id="approach-title">Our approach: quick wins that build capability and credibility</h2><p class="section-sub">With a pilot approach, your team learns by doing and delivers outcomes your leaders can trust.</p></div>
+      <div class="diagram" aria-label="Foothold to Scale diagram"><div class="phase">Prioritize</div><span aria-hidden="true">→</span><div class="phase">Pilot</div><span aria-hidden="true">→</span><div class="phase">Test & Measure</div><span aria-hidden="true">→</span><div class="phase">Iterate & Scale</div></div>
+      <ul>
+        <li><strong>Prioritize:</strong> Identify an impactful opportunity with measurable ROI. Align on success metrics and risks.</li>
+        <li><strong>Pilot:</strong> Build a focused, low-risk pilot in a controlled setting with your own data.</li>
+        <li><strong>Test &amp; Measure:</strong> Quantify impact, validate results with testimonials, and document learnings to guide future investment.</li>
+        <li><strong>Iterate &amp; Scale:</strong> Expand the pilot and operationalize into production, or redirect efforts to higher-value opportunities.</li>
+      </ul>
     </section>
 
-    <!-- HOW IT WORKS / SPRINT -->
+    <!-- HOW IT WORKS / SPRINT
     <section id="sprint" class="container" aria-labelledby="sprint-title">
       <div class="section-head"><h2 id="sprint-title">How it works: 4‑week starter sprint</h2><p class="section-sub">What you’ll have in 4 weeks: hard evidence, a confident next step, and a team that wants to keep going.</p></div>
       <div class="timeline card">
@@ -214,21 +240,49 @@
         <div class="step"><div><span class="badge">Week 4</span></div><div><h3>Recommend Next Step</h3><p>Go/No‑Go options: expand pilot, productionize, or pivot to a better foothold. <em>Artifacts:</em> Proof Pack (metrics, demo, exec one‑pager), Scale Options.</p></div></div>
       </div>
     </section>
-
+ -->
     <!-- SECTOR TILES -->
     <section class="container" aria-labelledby="sectors-title">
-      <div class="section-head"><h2 id="sectors-title">Where we start (sector‑specific footholds)</h2><p class="section-sub">We remain tool‑agnostic and fit within your security and compliance constraints.</p></div>
+      <div class="section-head"><h2 id="sectors-title">Industry Thought-Starters</h2></div>
       <div class="tiles">
-        <div class="card tile"><h3>Professional Services</h3><ul class="list"><li>Draft‑assist for proposals or statements of work in regulated contexts.</li><li>Research summarization across prior matters/cases/projects.</li><li>Intake triage to route work faster with fewer touches.</li></ul></div>
-        <div class="card tile"><h3>Mission‑Driven Non‑profits</h3><ul class="list"><li>Grant matching/summarization to increase hit rate.</li><li>Donor communications drafting with personalization controls.</li><li>Program reporting: auto‑compile narratives from field notes.</li></ul></div>
-        <div class="card tile"><h3>Healthcare Providers</h3><ul class="list"><li>Clinical documentation summarization to reduce admin burden (within compliance).</li><li>Patient messaging drafts with human review checkpoints.</li><li>Eligibility/prior‑auth packet preparation.</li></ul></div>
-        <div class="card tile"><h3>Financial Services</h3><ul class="list"><li>KYC/AML document summarization and risk flag triage.</li><li>Portfolio commentary drafts with compliance guardrails.</li><li>Claims intake classification and next‑action suggestions.</li></ul></div>
+        <div class="card tile"><h3>Professional Services Firms</h3>
+          <ul>
+            <li>Automated time and expense compliance checks</li>
+            <li>Smart resource scheduling and staffing</li>
+            <li>Contract renewal monitoring and alerts</li>
+            <li>Project health and deadline tracking</li>
+            <li>Centralized knowledge access assistant</li>
+          </ul></div>
+        <div class="card tile"><h3>Mission‑Driven Organizations</h3>
+          <ul>
+            <li>Personalized donor pledge reminder system</li>
+            <li>Volunteer scheduling and shift optimization</li>
+            <li>Grant compliance and fund tracking</li>
+            <li>Event registration and capacity management</li>
+            <li>Supporter database cleanup and deduplication</li>
+          </ul></div>
+        <div class="card tile"><h3>Healthcare Providers</h3>
+          <ul>
+          <li>Staff credential and license monitoring</li>
+          <li>Automated supply and inventory alerts</li>
+          <li>Equipment maintenance scheduling system</li>
+          <li>Billing error and denial classification</li>
+          <li>Policy compliance assistant for staff workflows</li>
+          </ul></div>
+        <div class="card tile"><h3>Higher Education</h3>
+          <ul>
+            <li>Automated class roster and LMS sync</li>
+            <li>Research compliance pre-checks (IRB/ethics)</li>
+            <li>Room and lab reservation management</li>
+            <li>Student financial aid eligibility checker</li>
+            <li>Faculty and staff onboarding automation</li>
+          </ul></div>
       </div>
     </section>
 
     <!-- TESTIMONIALS CAROUSEL (3-up) -->
     <section class="container" aria-labelledby="testimonials-title">
-      <div class="section-head"><h2 id="testimonials-title">Proof from leaders like you</h2><p class="section-sub">Short, candid reflections from mid‑market teams under real constraints.</p></div>
+      <div class="section-head"><h2 id="testimonials-title">Proof from leaders like you</h2></div>
       <div class="carousel card" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
         <div class="carousel-viewport" aria-live="polite">
           <div class="slides" id="slides">
@@ -249,8 +303,8 @@
     <section id="contact" class="container" aria-labelledby="contact-title">
       <div class="grid" style="grid-template-columns:1.2fr .8fr; gap:24px">
         <div>
-          <h2 id="contact-title">Ready to see progress in weeks, not months?</h2>
-          <p class="muted" style="max-width:55ch">Tell us a bit about your situation. We’ll respond with a quick perspective and suggest a foothold to explore together.</p>
+          <h2 id="contact-title">Let's get started together</h2>
+          <p class="muted" style="max-width:55ch">Contact us</p>
           <div class="card" style="margin-top:16px">
             <form id="inquiry-form" novalidate>
               <div class="row"><div><label for="name">Name</label><input id="name" name="name" type="text" required placeholder="Jane Chen" /></div><div><label for="email">Email</label><input id="email" name="email" type="email" required placeholder="jane@example.com" /></div></div>
