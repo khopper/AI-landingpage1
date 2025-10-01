@@ -31,8 +31,28 @@
 
     /* HERO */
     .hero{position:relative; overflow:hidden; border-bottom:1px solid var(--border); background:radial-gradient(1200px 600px at 70% -10%,rgba(22,116,224,.06),transparent), radial-gradient(1000px 500px at -10% -20%,rgba(20,163,127,.05),transparent)}
-    .hero .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; padding:72px 0}
-    @media (max-width: 900px){.hero .wrap{grid-template-columns:1fr; padding:56px 0}}
+    .hero .wrap{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      grid-auto-rows:auto;
+      gap:40px;
+      padding:72px 0
+    }
+    @media (max-width: 900px){
+      .hero .wrap{grid-template-columns:1fr; padding:56px 0}
+      .diagram-card{min-height:auto}
+    }
+
+    /* new placement helpers */
+    .hero-top{grid-column:1}
+    .hero-body{grid-column:1; grid-row:2}
+    .hero-actions{grid-column:1}
+    .diagram-card{
+      grid-column:2; grid-row:2;
+      display:flex; align-items:center; justify-content:center;
+      background:#fff; border:1px solid var(--border); border-radius:16px;
+      padding:20px; min-height:100%;
+    }
 
     h1{font-size: clamp(2rem, 4.5vw, 3rem); line-height:1.1; margin:0 0 16px}
     h2{font-size: clamp(1.6rem, 3vw, 2.2rem); line-height:1.2; margin:0 0 12px}
@@ -53,7 +73,6 @@
 
     /* Sections */
     section{padding:64px 0}
-    /*.section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; margin-bottom:16px} */
     .section-head{ display: flex; flex-direction: column; gap: .25rem; }
     .section-sub{color:var(--muted); font-size:.95rem}
 
@@ -121,26 +140,35 @@
 </head>
 <body>
   <main>
-    <!-- HERO (no top strip) -->
+    <!-- HERO (reworked layout) -->
     <section class="hero" aria-labelledby="hero-title">
       <div class="container wrap">
-        <div>
-          <img src="image-momentum.png" alt="adsf" style="width:50%; height:80; display:block; padding-bottom:30px"/>
+        <!-- row 1, col 1: logo + headline -->
+        <div class="hero-top">
+          <img src="image-momentum.png" alt="Momentum AI logo" style="width:50%; height:auto; display:block; padding-bottom:30px"/>
           <h1 id="hero-title">Unlock AI’s Potential: Measurable Results, Delivered Alongside Your Team.</h1>
+        </div>
+
+        <!-- row 2: left (paragraph + bullets), right (diagram card) share height -->
+        <div class="hero-body">
           <p class="muted" style="max-width:52ch">For leaders who see the importance of AI but need help turning initiative into results. We identify the right AI solutions for your business and deliver visible progress in weeks — building confidence with your teams and gaining organizational buy-in with measurable ROI.</p>
-          <ul class="list" style="margin:18px 0 26px">
+          <ul class="list" style="margin:18px 0 0">
             <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 12l4 4 12-12" fill="none" stroke="var(--accent-2)" stroke-width="2" stroke-linecap="round"/></svg><span>Quick, <strong>low-risk projects</strong> that show real results and get your team moving.</span></li>
             <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="8" cy="12" r="3" stroke="var(--accent)" stroke-width="2" fill="none"/><circle cx="16" cy="12" r="3" stroke="var(--accent)" stroke-width="2" fill="none"/><path d="M5 19c2-3 12-3 14 0" stroke="var(--accent)" stroke-width="2" fill="none"/></svg><span>Enhancing, not replacing your team - we work alongside you to enable and <strong>gain buy-in</strong>.</span></li>
             <li><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 16l6-6 4 4 6-6" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/><path d="M4 20h16" stroke="var(--accent)" stroke-width="2"/></svg><span>A clear path from pilot to scale - <strong>creating the vision</strong> to keep moving forward.</span></li>
           </ul>
-          <div class="grid" style="grid-template-columns:auto auto; gap:12px">
+        </div>
+
+        <aside class="diagram-card" aria-label="Momentum AI process diagram">
+          <img src="MomentumAI-FlowDiagram.png" alt="Momentum AI process diagram showing Foothold → Pilot → Proof → Scale" style="max-width:100%; height:auto; display:block"/>
+        </aside>
+
+        <!-- row 3, col 1: actions -->
+        <div class="hero-actions">
+          <div class="grid" style="grid-template-columns:auto auto; gap:12px; margin-top:26px">
             <a href="#contact" class="btn primary" aria-label="Talk to us — go to contact form">Talk to Us</a>
-            <!-- <a href="#sprint" class="btn" aria-label="Jump to how it works">How it works in 4 weeks ↓</a> -->
           </div>
         </div>
-        <aside>
-          <img src="momentum-process-diagram.png" alt="Momentum AI process diagram showing Foothold → Pilot → Proof → Scale" style="width:100%; height:auto; border:1px solid var(--border); border-radius:16px; display:block; background:#fff"/>
-        </aside>
       </div>
     </section>
 
@@ -148,18 +176,8 @@
     <section class="logos" aria-labelledby="logos-title">
       <div class="container">
         <div class="section-head"><p id="logos-title" class="muted">From Fortune 500s to leading non-profits, Momentum AI’s approach helps organizations struggling to gain traction on their AI initiatives and make meaningful, measurable, progress.</p>
-
           <img src="logo-farm.png" style="display:block;margin:0 auto;width:80%;height:auto;">
-          </div>
-          <!--
-          <div class="logo-tile" role="listitem" aria-label="Professional Services placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><path d="M18 30 L28 10 L38 30 Z" fill="#1674e0"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">Harbor Legal</text></svg></div>
-          <div class="logo-tile" role="listitem" aria-label="Non‑profit placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><circle cx="24" cy="20" r="10" fill="#14a37f"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">GoodWorks Org</text></svg></div>
-          <div class="logo-tile" role="listitem" aria-label="Healthcare placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><path d="M20 12h8v8h8v8h-8v8h-8v-8h-8v-8h8z" fill="#60a5fa"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">River Health</text></svg></div>
-          <div class="logo-tile" role="listitem" aria-label="Financial Services placeholder logo"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><path d="M14 28 L26 12 L38 28" fill="none" stroke="#1674e0" stroke-width="3"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">Crescent Finance</text></svg></div>
-          <div class="logo-tile" role="listitem" aria-label="Professional Services placeholder logo 2"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><rect x="16" y="10" width="20" height="20" rx="4" fill="#1674e0"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">Bridge & Co</text></svg></div>
-          <div class="logo-tile" role="listitem" aria-label="Financial Services placeholder logo 2"><svg viewBox="0 0 140 40" width="120" height="40" aria-hidden="true"><rect x="2" y="2" width="136" height="36" rx="6" fill="#fff" stroke="#e2e8f0"/><circle cx="20" cy="20" r="10" fill="none" stroke="#14a37f" stroke-width="3"/><text x="50" y="26" fill="#64748b" font-size="12" font-family="system-ui">NorthStar Bank</text></svg></div>
-          -->
- 
+        </div>
       </div>
     </section>
 
@@ -229,19 +247,7 @@
       </ul>
     </section>
 
-    <!-- HOW IT WORKS / SPRINT
-    <section id="sprint" class="container" aria-labelledby="sprint-title">
-      <div class="section-head"><h2 id="sprint-title">How it works: 4‑week starter sprint</h2><p class="section-sub">What you’ll have in 4 weeks: hard evidence, a confident next step, and a team that wants to keep going.</p></div>
-      <div class="timeline card">
-        <div class="step"><div><span class="badge">Week 0</span></div><div><h3>Intake & Alignment (2–3 hours)</h3><p>Identify a high‑leverage foothold; align on success metrics and guardrails. <em>Artifacts:</em> Success Brief, data/IT guardrails.</p></div></div>
-        <div class="step"><div><span class="badge">Week 1</span></div><div><h3>Prototype with Your Team</h3><p>Build a scrappy, safe pilot in a controlled setting using your data context. <em>Artifacts:</em> working demo, risk register.</p></div></div>
-        <div class="step"><div><span class="badge">Week 2</span></div><div><h3>Pilot in the Real Workflow</h3><p>Limited exposure with real users; capture outcomes and feedback. <em>Artifacts:</em> pilot metrics, change notes.</p></div></div>
-        <div class="step"><div><span class="badge">Week 3</span></div><div><h3>Measure & Prove</h3><p>Quantify impact (time saved, error reduction, throughput); collect testimonials; document learnings.</p></div></div>
-        <div class="step"><div><span class="badge">Week 4</span></div><div><h3>Recommend Next Step</h3><p>Go/No‑Go options: expand pilot, productionize, or pivot to a better foothold. <em>Artifacts:</em> Proof Pack (metrics, demo, exec one‑pager), Scale Options.</p></div></div>
-      </div>
-    </section>
- -->
-    <!-- SECTOR TILES -->
+     <!-- SECTOR TILES -->
     <section class="container" aria-labelledby="sectors-title">
       <div class="section-head"><h2 id="sectors-title">Industry Thought-Starters</h2></div>
       <div class="tiles">
@@ -251,7 +257,7 @@
             <li>Smart resource scheduling and staffing</li>
             <li>Contract renewal monitoring and alerts</li>
             <li>Project health and deadline tracking</li>
-            <li>Centralized knowledge access assistant</li>
+            <li>Knowledge Management Agent</li>
           </ul></div>
         <div class="card tile"><h3>Mission‑Driven Organizations</h3>
           <ul>
@@ -280,7 +286,7 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS CAROUSEL (3-up) -->
+<!-- TESTIMONIALS CAROUSEL (3-up) -->
     <section class="container" aria-labelledby="testimonials-title">
       <div class="section-head"><h2 id="testimonials-title">Proof from leaders like you</h2></div>
       <div class="carousel card" role="region" aria-roledescription="carousel" aria-label="Client testimonials">
@@ -299,7 +305,7 @@
       </div>
     </section>
 
-    <!-- CTA / CONTACT (restored) -->
+    <!-- CTA / CONTACT -->
     <section id="contact" class="container" aria-labelledby="contact-title">
       <div class="grid" style="grid-template-columns:1.2fr .8fr; gap:24px">
         <div>
@@ -317,7 +323,7 @@
           </div>
         </div>
         <aside>
-          <div class="card"><h3 style="margin-top:0">What you can expect</h3><ul class="list"><li>Human conversation in plain English — no hype.</li><li>A concrete foothold idea for your context.</li><li>Clear next steps for a low‑risk starter sprint.</li></ul></div>
+          <div class="card"><h3 style="margin-top:0">What you can expect</h3><ul class="list"><li>Human conversation in plain English — no hype.</li><li>Team alignment on a pilot with success metrics.</li><li>Clear next steps for a low‑risk starter sprint.</li></ul></div>
           <div class="card"><h3 style="margin-top:0">Company</h3><p><strong>Momentum AI</strong><br/>Vendor‑neutral · Remote‑first</p></div>
         </aside>
       </div>
